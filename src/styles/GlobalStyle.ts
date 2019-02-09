@@ -140,7 +140,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-      font-size: ${defaultTheme.fontSizes.reference};
       font-family: 'Open Sans', sans-serif;
   }
   *, *:before, *:after {

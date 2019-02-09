@@ -1,6 +1,8 @@
-/* eslint-disable import/prefer-default-export */
-import styled from "../../../styles/styled-components";
 // MenuButton components
+import styled from "src/styles/styled-components";
+
+// tslint:disable-next-line
+console.log({ "in menu NODE_PATH is : ": process.env.NODE_PATH, SOMETHING: process.env.SOMETHING });
 
 export const Wrapper = styled.div`
   font-size: 1.2em;

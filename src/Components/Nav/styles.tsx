@@ -1,11 +1,11 @@
-import styled from "../../styles/styled-components";
+import styled from "src/styles/styled-components";
 
 export const Wrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  font-size: ${({ theme }) => theme.fontSizes.big};
+  font-size: ${({ theme }) => theme.fontSizes.normal};
   height: ${({ theme }) => theme.navBar.height};
   display: flex;
   align-items: center;

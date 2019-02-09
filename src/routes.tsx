@@ -2,6 +2,7 @@ import * as React from "react";
 import Home from "./Views/Home";
 import Players from "./Views/Players";
 import Rules from "./Views/Rules";
+import Todos from "./Views/Todos";
 
 export type RouteShape = {
   component: React.ComponentClass<any, any> | React.FC<any> | undefined;
@@ -26,6 +27,10 @@ const ROUTES = routeKeepingTypes({
   RULES: {
     component: Rules,
     path: "/rules",
+  },
+  TODOS: {
+    component: Todos,
+    path: "/todos",
   },
 });
 

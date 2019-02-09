@@ -6,7 +6,6 @@ export default interface IThemeInterface {
     secondaryDarker: string;
   };
   fontSizes: {
-    reference: string;
     smallest: string;
     small: string;
     normal: string;
@@ -38,8 +37,7 @@ export const defaultTheme: IThemeInterface = {
     big: "2.2rem",
     bigger: "3rem",
     biggest: "5rem",
-    normal: "1.5rem",
-    reference: "10px",
+    normal: "1.6rem",
     small: "1rem",
     smallest: "0.8rem",
   },

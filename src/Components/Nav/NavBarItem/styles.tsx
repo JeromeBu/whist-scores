@@ -1,5 +1,5 @@
-import styled from "../../../styles/styled-components";
 // NavBarItem components
+import styled from "src/styles/styled-components";
 
 export const Wrapper = styled("li")<{ disabled?: boolean }>`
   padding: 0 1em;

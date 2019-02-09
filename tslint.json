@@ -5,6 +5,8 @@
   },
   "rules": {
     "member-access": false,
-    "interface-over-type-literal": false
+    "interface-over-type-literal": false,
+    "jsx-boolean-value": false,
+    "jsx-no-lambda": false
   }
 }
