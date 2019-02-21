@@ -1,7 +1,7 @@
-export interface ITodos {
+export type Todo = {
   isChecked: boolean;
   text: string;
-}
+};
 
 export interface IAction {
   type: string;
@@ -9,7 +9,7 @@ export interface IAction {
 }
 
 export type TodosState = {
-  readonly todos: ITodos[];
+  readonly todos: Todo[];
 };
 
 export interface IAddTodoPayload {

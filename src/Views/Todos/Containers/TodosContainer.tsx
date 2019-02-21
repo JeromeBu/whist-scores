@@ -1,10 +1,11 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import Layout from "src/Components/Layout";
-// import Types from "Types";
+import { RootState } from "Types";
 import AddTodo from "../Components/AddTodo";
 import TodoList from "../Components/TodoList";
-import { addTodo, removeTodo, toggleTodo } from "../todosStore/actionCreator";
+import { addTodo, removeTodo, toggleTodo } from "../todosStore/actions";
+import { selectTodos } from "../todosStore/selectors";
 
 // interface ITodos {
 //   isChecked: boolean;
@@ -31,7 +32,7 @@ class TodosContainer extends React.Component<Props, State> {
   addTodoAndClearInput = () => {
     const { inputValue } = this.state;
     if (inputValue !== "") {
-      this.props.addTodo({ text: inputValue, isChecked: false });
+      this.props.addTodo(inputValue);
       this.setState({
         inputValue: "",
       });
@@ -74,8 +75,8 @@ class TodosContainer extends React.Component<Props, State> {
   }
 }
 
-const mapStateToProps = (state: State) => ({
-  todos: state.todosReducer.todos,
+const mapStateToProps = (state: RootState) => ({
+  todos: selectTodos(state),
 });
 
 export default connect(

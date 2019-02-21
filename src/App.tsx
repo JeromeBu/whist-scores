@@ -1,12 +1,12 @@
 import * as React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Nav from "./Components/Nav";
+import { store } from "src/store";
+import { ThemeProvider } from "src/styles/styled-components";
+import { defaultTheme } from "src/styles/themes";
 import ROUTES, { RouteShape } from "./routes";
-import { store } from "./store";
 import GlobalStyle from "./styles/GlobalStyle";
-import { ThemeProvider } from "./styles/styled-components";
-import { defaultTheme } from "./styles/themes";
+import ErrorNotFound from "./Views/ErrorNotFound";
 
 const App: React.FC = () => {
   return (
@@ -17,9 +17,10 @@ const App: React.FC = () => {
           <>
             {/* <Nav /> */}
             <Switch>
-              {Object.values(ROUTES).map(({ path, component, exact }: RouteShape) => (
+              {...Object.values(ROUTES).map(({ path, component, exact }: RouteShape) => (
                 <Route key={path} exact={exact} path={path} component={component} />
               ))}
+              <Route component={ErrorNotFound} />
             </Switch>
           </>
         </Router>

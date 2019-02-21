@@ -1,4 +1,5 @@
 import * as React from "react";
+import FetchingData from "./Views/FetchingData";
 import Home from "./Views/Home";
 import Players from "./Views/Players";
 import Rules from "./Views/Rules";
@@ -10,11 +11,12 @@ export type RouteShape = {
   path: string;
 };
 
-function routeKeepingTypes<T extends { [key: string]: RouteShape }>(arg: T): T {
+function routesKeepingTypes<T extends { [key: string]: RouteShape }>(arg: T): T {
   return arg;
 }
 
-const ROUTES = routeKeepingTypes({
+// tslint:disable:object-literal-sort-keys
+const ROUTES = routesKeepingTypes({
   HOME: {
     component: Home,
     exact: true,
@@ -32,6 +34,11 @@ const ROUTES = routeKeepingTypes({
     component: Todos,
     path: "/todos",
   },
+  FETCHING_DATA: {
+    component: FetchingData,
+    path: "/fetching-data",
+  },
 });
+// tslint:enable:object-literal-sort-keys
 
 export default ROUTES;
